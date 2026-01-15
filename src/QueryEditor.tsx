@@ -1,4 +1,4 @@
-import { debounce } from 'lodash';
+    import { debounce } from 'lodash';
 import React, { useMemo } from 'react';
 import { lastValueFrom } from 'rxjs';
 import { InlineSegmentGroup, SegmentSection, InlineLabel, Combobox, Input, ComboboxOption } from '@grafana/ui';
@@ -191,7 +191,9 @@ export const QueryEditor = (props: Props) => {
                   { value: 'CRITICAL' },
                 ]}
                 onChange={(v) => {
-                  onValueChange('type', v.value);
+                  if (v && v.value) {
+                    onValueChange('type', v.value);
+                  }
                 }}
                 createCustomValue={true}
                 width={28}
