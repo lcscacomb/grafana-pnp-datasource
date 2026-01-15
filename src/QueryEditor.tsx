@@ -193,7 +193,9 @@ export const QueryEditor = (props: Props) => {
                 onChange={(v) => {
                   onValueChange('type', v.value);
                 }}
-                value={props.query.type || 'AVERAGE'}
+                createCustomValue={true}
+                width={28}
+                isClearable={true}
               />
             </div>
           </InlineSegmentGroup>
