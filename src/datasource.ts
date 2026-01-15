@@ -46,6 +46,7 @@ export class DataSource extends DataSourceApi<PNPQuery, PNPDataSourceOptions> {
       target.perflabel = this._replaceRegexWithAll(target.perflabel, options.scopedVars);
       target.fill = templateSrv.replace(target.fill, options.scopedVars);
       target.factor = templateSrv.replace(String(target.factor || ''), options.scopedVars);
+      target.type = templateSrv.replace(target.type, options.scopedVars);
     });
 
     options.targets = options.targets.filter((t) => !t.hide);
